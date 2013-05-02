@@ -18,10 +18,14 @@ value = [x for idx, x in enumerate(vals) if idx % 2 != 0]
 #v = zip(description, value)
 
 f = open('/home/leomcabrall/github/cminfo/analisys.txt', 'a')
-
+tamanho = len(value)
+print tamanho
 f.write("\n" + datetime.today().strftime('%d/%m/%Y - %H:%M:%S,'))
-for t in value:
-    f.write(t + ',')
+for idx, t in enumerate(value):
+    if idx < tamanho-1:
+        f.write(t + ',')
+    else:
+        f.write(t)
 
 f.close()
 
